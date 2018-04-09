@@ -56,7 +56,7 @@ namespace TeduShop.Service
 
         public IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow)
         {
-            return _postReporsitory.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, page, pageSize, "PostCategory");
+            return _postReporsitory.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, page, pageSize, new string[] { "PostCategory" });
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
