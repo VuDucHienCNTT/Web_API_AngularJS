@@ -23,7 +23,7 @@ namespace TeduShop.Service
     }
 
     public class PostCategoryService : IPostCategoryService
-{
+    {
         private IPostCategoryRepository _postCategoryReporsitory;
         private IUnitOfWork _unitOfWork;
 
@@ -50,7 +50,7 @@ namespace TeduShop.Service
 
         public IEnumerable<PostCategory> GetAllByParentId(int parentId)
         {
-           return _postCategoryReporsitory.GetMulti(x => x.Status && x.ParentID == parentId);
+            return _postCategoryReporsitory.GetMulti(x => x.Status && x.ParentID == parentId);
         }
 
         public PostCategory GetById(int id)
