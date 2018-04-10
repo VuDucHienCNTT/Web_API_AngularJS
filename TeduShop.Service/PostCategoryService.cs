@@ -52,7 +52,7 @@ namespace TeduShop.Service
         {
             return _postCategoryReporsitory.GetMulti(x => x.Status && x.ParentID == parentId);
         }
-          
+
         public PostCategory GetById(int id)
         {
             return _postCategoryReporsitory.GetSingleById(id);
@@ -60,8 +60,6 @@ namespace TeduShop.Service
 
         public void Save()
         {
-
-
             _unitOfWork.Commit();
         }
 
