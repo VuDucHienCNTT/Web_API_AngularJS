@@ -60,7 +60,7 @@ namespace TeduShop.Service
 
         public void Save()
         {
-            throw new System.NotImplementedException();
+            _unitOfWork.Commit();
         }
 
         public void Update(PostCategory postCategory)
