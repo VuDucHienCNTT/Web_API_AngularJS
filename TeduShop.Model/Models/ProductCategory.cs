@@ -11,13 +11,10 @@ namespace TeduShop.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
-
         [Required]
         public string Name { set; get; }
-
         [Required]
         public string Alias { set; get; }
-
         public string Description { set; get; }
         public int? ParentID { set; get; }
         public int DisplayOrder { set; get; }
