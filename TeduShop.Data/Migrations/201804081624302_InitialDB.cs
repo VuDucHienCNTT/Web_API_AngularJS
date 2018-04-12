@@ -112,7 +112,7 @@ namespace TeduShop.Data.Migrations
                         Alias = c.String(nullable: false),
                         Description = c.String(),
                         ParentID = c.Int(),
-                        DislayOrder = c.Int(nullable: false),
+                        DisplayOrder = c.Int(nullable: false),
                         Image = c.String(),
                         HomeFlag = c.Boolean(),
                         CreatedDate = c.DateTime(),

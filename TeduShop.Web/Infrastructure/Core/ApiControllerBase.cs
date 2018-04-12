@@ -39,21 +39,17 @@ namespace TeduShop.Web.Infrastructure.Core
                 LogError(ex);
                 response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.InnerException.Message);
             }
-
             catch (DbUpdateException dbEx)
             {
                 LogError(dbEx);
                 response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, dbEx.InnerException.Message);
-
             }
             catch (Exception ex)
             {
                 LogError(ex);
                 response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
-
             }
             return response;
-
         }
 
         private void LogError(Exception ex)
