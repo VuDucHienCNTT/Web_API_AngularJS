@@ -25,35 +25,59 @@
             </div>
         </div>
         <div class="box-body">
-           <div class="row">
-               <div class="col-md-12">
-                   <div class="box">
-                       <!-- /.box-header -->
-                       <div class="box-body">
-                           <table class="table table-bordered">
-                               <tr>
-                                   <th style="width: 10%">ID</th>
-                                   <th style="width: 50%">Tên danh mục</th>
-                                   <th style="width: 20%">Ngày tạo</th>
-                                   <th style="width: 20%">Trạng thái</th>
-                               </tr>
-                               <tr ng-repeat="item in productCategories">
-                                   <td>{{item.ID}}</td>
-                                   <td>{{item.Name}}</td>
-                                   <td>{{item.CreateDate}}</td>
-                                   <td><span class="badge bg-red">{{item.Status}}</span></td>
-                               </tr>
-                           </table>
-                       </div> 
-                   </div>
-               </div>
-           </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="keyword" placeholder="Nhập từ khóa...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th style="width: 5%">Id</th>
+                                    <th style="width: 55%">Tên danh mục</th>
+                                    <th style="width: 20%">Ngày tạo</th>
+                                    <th style="width: 10%">Trạng thái</th>
+                                    <th style="width: 10%">Thao tác</th>
+                                </tr>
+                                <tr ng-repeat="item in productCategories">
+                                    <td>{{item.ID}}</td>
+                                    <td>{{item.Name}}</td>
+                                    <td>{{item.CreatedDate | date :'dd/MM/yyyy hh:mm:ss a'}}</td>
+                                    <td>
+                                        <span ng-class="{'badge bg-red':item.Status==false,'badge bg-green':item.Status==true}">
+                                            {{item.Status | statusFilter}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <span class="pull-right"> Trang: <b> {{page+1}} </b> - Tổng số có <b> {{totalCount}} </b> bản ghi </span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategories(page)"></pager-directive>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.box-body -->
-        <!--<div class="box-footer">
-            
-        </div>-->
-        <!-- /.box-footer-->
     </div>
     <!-- /.box -->
 </section>
