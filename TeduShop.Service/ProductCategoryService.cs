@@ -7,13 +7,14 @@ namespace TeduShop.Service
 {
     public interface IProductCategoryService
     {
-        void Add(ProductCategory productCategory);
+        ProductCategory Add(ProductCategory productCategory);
 
         void Update(ProductCategory productCategory);
 
-        void Delete(int id);
+        ProductCategory Delete(int id);
 
         IEnumerable<ProductCategory> GetAll();
+
         IEnumerable<ProductCategory> GetAll(string keyword);
 
         IEnumerable<ProductCategory> GetAllbyParentId(int parentId);
@@ -34,14 +35,14 @@ namespace TeduShop.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(ProductCategory productCategory)
+        public ProductCategory Add(ProductCategory productCategory)
         {
-            _productCategoryRepository.Add(productCategory);
+            return _productCategoryRepository.Add(productCategory);
         }
 
-        public void Delete(int id)
+        public ProductCategory Delete(int id)
         {
-            _productCategoryRepository.Delete(id);
+            return _productCategoryRepository.Delete(id);
         }
 
         public IEnumerable<ProductCategory> GetAll()
@@ -51,7 +52,7 @@ namespace TeduShop.Service
 
         public IEnumerable<ProductCategory> GetAll(string keyword)
         {
-            if(!string.IsNullOrEmpty(keyword))
+            if (!string.IsNullOrEmpty(keyword))
             {
                 return _productCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
             }
@@ -68,7 +69,7 @@ namespace TeduShop.Service
 
         public ProductCategory GetById(int id)
         {
-           return _productCategoryRepository.GetSingleById(id);
+            return _productCategoryRepository.GetSingleById(id);
         }
 
         public void Save()
