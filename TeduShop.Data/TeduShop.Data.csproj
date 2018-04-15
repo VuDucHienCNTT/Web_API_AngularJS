@@ -68,10 +68,6 @@
     <Compile Include="Migrations\201804111458089_AddTableError.Designer.cs">
       <DependentUpon>201804111458089_AddTableError.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804120454002_UdField.cs" />
-    <Compile Include="Migrations\201804120454002_UdField.Designer.cs">
-      <DependentUpon>201804120454002_UdField.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201804121436463_addIdentity.cs" />
     <Compile Include="Migrations\201804121436463_addIdentity.Designer.cs">
       <DependentUpon>201804121436463_addIdentity.cs</DependentUpon>
@@ -79,6 +75,10 @@
     <Compile Include="Migrations\201804121509470_changekey.cs" />
     <Compile Include="Migrations\201804121509470_changekey.Designer.cs">
       <DependentUpon>201804121509470_changekey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804151059193_UdField1.cs" />
+    <Compile Include="Migrations\201804151059193_UdField1.Designer.cs">
+      <DependentUpon>201804151059193_UdField1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,14 +123,14 @@
     <EmbeddedResource Include="Migrations\201804111458089_AddTableError.resx">
       <DependentUpon>201804111458089_AddTableError.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804120454002_UdField.resx">
-      <DependentUpon>201804120454002_UdField.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804121436463_addIdentity.resx">
       <DependentUpon>201804121436463_addIdentity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804121509470_changekey.resx">
       <DependentUpon>201804121509470_changekey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804151059193_UdField1.resx">
+      <DependentUpon>201804151059193_UdField1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace TeduShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UdField : IMigrationMetadata
+    public sealed partial class UdField1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UdField));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UdField1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804120454002_UdField"; }
+            get { return "201804151059193_UdField1"; }
         }
         
         string IMigrationMetadata.Source
