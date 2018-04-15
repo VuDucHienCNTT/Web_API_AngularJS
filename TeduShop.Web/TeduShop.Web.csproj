@@ -246,6 +246,7 @@
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\tedushop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -702,6 +703,10 @@
     <Content Include="Assets\admin\lib\slimscroll\examples\style.css" />
     <Content Include="Assets\admin\lib\slimscroll\jquery.slimscroll.js" />
     <Content Include="Assets\admin\lib\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Assets\admin\lib\toastr\toastr.css" />
+    <Content Include="Assets\admin\lib\toastr\toastr.js" />
+    <Content Include="Assets\admin\lib\toastr\toastr.min.css" />
+    <Content Include="Assets\admin\lib\toastr\toastr.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -1120,6 +1125,13 @@
     <Content Include="Assets\admin\lib\jquery-slimscroll\bower.json" />
     <Content Include="Assets\admin\lib\jquery-slimscroll\package.json" />
     <Content Include="Assets\admin\lib\jquery-slimscroll\README.md" />
+    <Content Include="Assets\admin\lib\toastr\.bower.json" />
+    <Content Include="Assets\admin\lib\toastr\bower.json" />
+    <Content Include="Assets\admin\lib\toastr\LICENSE" />
+    <Content Include="Assets\admin\lib\toastr\README.md" />
+    <Content Include="Assets\admin\lib\toastr\toastr.js.map" />
+    <Content Include="Assets\admin\lib\toastr\toastr.less" />
+    <Content Include="Assets\admin\lib\toastr\toastr.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>

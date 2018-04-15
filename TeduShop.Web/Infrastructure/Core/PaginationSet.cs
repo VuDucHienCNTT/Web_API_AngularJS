@@ -15,8 +15,8 @@ namespace TeduShop.Web.Infrastructure.Core
             }
         }
 
-        public int TotalPages { set; get; }
-        public int TotalCount { set; get; }
+        public int TotalPages { set; get; }// tong so trang
+        public int TotalCount { set; get; }// tong so ban ghi
         public IEnumerable<T> Items { set; get; }
     }
 }
