@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201804151059193_UdField1.Designer.cs">
       <DependentUpon>201804151059193_UdField1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804161530084_UdRq_MaxLength.cs" />
+    <Compile Include="Migrations\201804161530084_UdRq_MaxLength.Designer.cs">
+      <DependentUpon>201804161530084_UdRq_MaxLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804151059193_UdField1.resx">
       <DependentUpon>201804151059193_UdField1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804161530084_UdRq_MaxLength.resx">
+      <DependentUpon>201804161530084_UdRq_MaxLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

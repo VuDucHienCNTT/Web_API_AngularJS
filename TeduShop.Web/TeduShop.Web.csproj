@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -269,6 +271,7 @@
     <Content Include="Assets\admin\css\alt\AdminLTE-select2.min.css" />
     <Content Include="Assets\admin\css\alt\AdminLTE-without-plugins.css" />
     <Content Include="Assets\admin\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Assets\admin\css\customcss.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black.css" />
@@ -342,6 +345,8 @@
     <Content Include="Assets\admin\lib\angular\angular.js" />
     <Content Include="Assets\admin\lib\angular\angular.min.js" />
     <Content Include="Assets\admin\lib\angular\index.js" />
+    <Content Include="Assets\admin\lib\bootbox\.gitignore" />
+    <Content Include="Assets\admin\lib\bootbox\bootbox.js" />
     <Content Include="Assets\admin\lib\bootstrap\.babelrc.js" />
     <Content Include="Assets\admin\lib\bootstrap\.gitattributes" />
     <Content Include="Assets\admin\lib\bootstrap\.gitignore" />
@@ -695,6 +700,18 @@
     <Content Include="Assets\admin\lib\jquery\src\var\support.js" />
     <Content Include="Assets\admin\lib\jquery\src\var\toString.js" />
     <Content Include="Assets\admin\lib\jquery\src\wrap.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\dist\ngBootbox.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\dist\ngBootbox.min.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-1\app.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-1\custom-dialog.tpl.html" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-1\index.html" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-2\app.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-2\index.html" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-2\main.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\example-2\require.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\examples\index.html" />
+    <Content Include="Assets\admin\lib\ngBootbox\gulpfile.js" />
+    <Content Include="Assets\admin\lib\ngBootbox\ngBootbox.js" />
     <Content Include="Assets\admin\lib\slimscroll\examples\allow-page-scroll.html" />
     <Content Include="Assets\admin\lib\slimscroll\examples\chaining.html" />
     <Content Include="Assets\admin\lib\slimscroll\examples\disable-fade-out.html" />
@@ -1145,6 +1162,20 @@
     <Content Include="Assets\admin\lib\angular-ui-router\tslint.json" />
     <Content Include="Assets\admin\lib\angular-ui-router\typedoc.json" />
     <Content Include="Assets\admin\lib\angular-ui-router\yarn.lock" />
+    <Content Include="Assets\admin\lib\bootbox\.bower.json" />
+    <Content Include="Assets\admin\lib\bootbox\.jshintrc" />
+    <Content Include="Assets\admin\lib\bootbox\.npmignore" />
+    <Content Include="Assets\admin\lib\bootbox\.travis.yml" />
+    <Content Include="Assets\admin\lib\bootbox\bower.json" />
+    <Content Include="Assets\admin\lib\bootbox\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\lib\bootbox\LICENSE.md" />
+    <Content Include="Assets\admin\lib\bootbox\package.json" />
+    <Content Include="Assets\admin\lib\bootbox\README.md" />
+    <Content Include="Assets\admin\lib\ngBootbox\.bower.json" />
+    <Content Include="Assets\admin\lib\ngBootbox\bower.json" />
+    <Content Include="Assets\admin\lib\ngBootbox\package.json" />
+    <Content Include="Assets\admin\lib\ngBootbox\README.md" />
+    <Content Include="Assets\admin\lib\ngBootbox\tsd.json" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
@@ -1166,11 +1197,20 @@
       <Name>TeduShop.Service</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\admin\lib\ngBootbox\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\lib\ngBootbox\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\lib\ngBootbox\typings\tsd.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

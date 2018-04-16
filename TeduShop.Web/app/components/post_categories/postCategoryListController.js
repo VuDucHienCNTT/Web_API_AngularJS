@@ -6,7 +6,7 @@
     function postCategoryListController($scope, apiService, notificationService) {
         $scope.postCategories = [];
 
-        apiService.get('/api/postcategory/getall', config, function (result) {
+        apiService.get('/api/postcategory/getall', null, function (result) {
             $scope.postCategories = result.data;
         }, function () {
             notificationService.displayError('Load postcategory failed!');

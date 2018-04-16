@@ -1,0 +1,6 @@
+﻿.has-error {
+    color: red;
+    cursor: pointer;
+    text-align:center;
+    font-weight:bold;
+}
