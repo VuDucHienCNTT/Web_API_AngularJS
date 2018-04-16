@@ -239,27 +239,18 @@
                             <li><a ui-sref="products"><i class="fa fa-circle-o"></i> Sản phẩm</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="../widgets.html">
-                            <i class="fa fa-th"></i> <span>Widgets</span>
-                            <span class="pull-right-container">
-                                <small class="label pull-right bg-green">Hot</small>
-                            </span>
-                        </a>
-                    </li>
+
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-pie-chart"></i>
-                            <span>Charts</span>
+                            <span>Bài đăng</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                            <li><a ui-sref="post_categories"><i class="fa fa-circle-o"></i> Danh mục bài đăng</a></li>
+                            <li><a ui-sref="#"><i class="fa fa-circle-o"></i> Bài đăng</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -599,6 +590,7 @@
     <script src="~/app/shared/directives/pagerDirective.js"></script>
     <script src="~/app/components/products/products.module.js"></script>
     <script src="~/app/components/product_categories/productCategory.module.js"></script>
+    <script src="~/app/components/post_categories/postCategory.module.js"></script>
     <script src="~/app/app.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
@@ -606,7 +598,7 @@
     <script src="~/app/components/product_categories/productCategoryListController.js"></script>
     <script src="~/app/components/product_categories/productCategoryAddController.js"></script>
     <script src="~/app/components/product_categories/productCategoryEditController.js"></script>
-
+    <script src="~/app/components/post_categories/postCategoryListController.js"></script>
 </body>
 </html>
 

@@ -30,20 +30,18 @@
                     <div class="input-group">
                         <input type="text" class="form-control" ng-model="keyword" placeholder="Nhập từ khóa...">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                            <button class="btn btn-primary" type="button" ng-click="search()">Tìm kiếm</button>
                         </span>
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-
-                    <button class="btn btn-success" type="button" ui-sref="add_product_category">Thêm mới</button>
-
+                    <button class="btn btn-success pull-right" type="button" ui-sref="add_product_category">Thêm mới</button>
                 </div><!-- /.col-lg-6 -->
             </div>
             <br />
             <div class="row">
                 <div class="col-md-12">
-                    <div class="box">
+                    <!--<div class="box">-->
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table class="table table-bordered">
@@ -78,7 +76,7 @@
                             </table>
                         </div>
                         <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategories(page)"></pager-directive>
-                    </div>
+                    <!--</div>-->
                 </div>
             </div>
         </div>
