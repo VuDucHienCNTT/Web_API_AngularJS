@@ -21,12 +21,12 @@
                     <div class="input-group">
                         <input type="text" class="form-control" ng-model="keyword" placeholder="Nhập từ khóa...">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button" ng-click="">Tìm kiếm</button>
+                            <button class="btn btn-primary" type="button" ng-click="search()">Tìm kiếm</button>
                         </span>
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-                    <button class="btn btn-success pull-right" type="button" ui-sref="">Thêm mới</button>
+                    <button class="btn btn-success pull-right" type="button" ui-sref="add_post_category">Thêm mới</button>
                 </div><!-- /.col-lg-6 -->
             </div>
             <br />
@@ -48,13 +48,13 @@
                                 <td>{{item.Name}}</td>
                                 <td>{{item.CreatedDate | date :'dd/MM/yyyy hh:mm:ss a'}}</td>
                                 <td>
-                                    <!--<span ng-class="{'badge bg-red':item.Status==false,'badge bg-green':item.Status==true}">
+                                    <span ng-class="{'badge bg-red':item.Status==false,'badge bg-green':item.Status==true}">
                                         {{item.Status | statusFilter}}
-                                    </span>-->
+                                    </span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary" ui-sref=""><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-primary" ui-sref="edit_post_category({id:item.ID})"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-sm btn-danger" ng-click="deletePostCategory(item.ID)"><i class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tfoot>

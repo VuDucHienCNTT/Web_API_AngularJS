@@ -148,13 +148,10 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    var oldProductCategory = _productCategoryService.Delete(id);
+                    _productCategoryService.Delete(id);
                     _productCategoryService.Save();
-
-                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(oldProductCategory);
-                    response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                    response = request.CreateResponse(HttpStatusCode.OK);
                 }
-
                 return response;
             });
         }

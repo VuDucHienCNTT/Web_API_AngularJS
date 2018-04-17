@@ -23,7 +23,6 @@
             });
         }
 
-
         function UpdateProductCategory() {
             apiService.put('api/productcategory/update', $scope.productCategory, function (result) {
                 notificationService.displaySuccess(result.data.Name + ' đã được cập nhật!');

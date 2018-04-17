@@ -25,7 +25,7 @@
                 }
                 apiService.del('api/productcategory/delete', config, function () {
                     notificationService.displaySuccess('Xóa thành công!');
-                    search();
+                    $scope.getProductCategories();
                 }, function () {
                     notificationService.displayError('Xóa không thành công!');
                 })
