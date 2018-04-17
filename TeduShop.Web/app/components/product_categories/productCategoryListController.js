@@ -10,8 +10,11 @@
         $scope.keyword = '';
         $scope.search = search;
         $scope.getProductCategories = getProductCategories;
-
         $scope.deleteProductCategory = deleteProductCategory;
+
+        function search() {
+            getProductCategories();
+        }
 
         function deleteProductCategory(id) {
             $ngBootbox.confirm('Bạn có chắc chắn muốn xóa không?').then(function () {
@@ -21,16 +24,12 @@
                     }
                 }
                 apiService.del('api/productcategory/delete', config, function () {
-                    notificationService.displaySuccess('Xóa  thành công!');
+                    notificationService.displaySuccess('Xóa thành công!');
                     search();
                 }, function () {
                     notificationService.displayError('Xóa không thành công!');
                 })
             });
-        }
-
-        function search() {
-            getProductCategories();
         }
 
         function getProductCategories(page) {

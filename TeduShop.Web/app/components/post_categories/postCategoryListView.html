@@ -53,20 +53,20 @@
                                     </span>-->
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary" ui-sref="<!--edit_product_category({id:item.ID})-->"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-sm btn-primary" ui-sref=""><i class="fa fa-pencil"></i></button>
                                     <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tfoot>
                                 <tr>
                                     <td colspan="5">
-                                        <!--<span class="pull-right"> Trang: <b> {{page+1}} </b> - Tổng số có <b> {{totalCount}} </b> bản ghi </span>-->
+                                        <span class="pull-right"> Trang: <b> {{page+1}} </b> - Tổng số có <b> {{totalCount}} </b> bản ghi </span>
                                     </td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
-                    <!--<pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategories(page)"></pager-directive>-->
+                    <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getPostCategories(page)"></pager-directive>
                     <!--</div>-->
                 </div>
             </div>
