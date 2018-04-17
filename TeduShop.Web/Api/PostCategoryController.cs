@@ -92,9 +92,11 @@ namespace TeduShop.Web.Api
                 {
                     PostCategory newPostCategory = new PostCategory();
                     newPostCategory.UpdatePostCategory(postCategoryVm);
+                    newPostCategory.CreatedDate = DateTime.Now;
                     var category = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Save();
-                    response = request.CreateResponse(HttpStatusCode.Created, category);
+                    var responseData = Mapper.Map<PostCategory, PostCategoryViewModel>(newPostCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });
@@ -114,11 +116,13 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    var postCategoryDb = _postCategoryService.GetById(postCategoryVm.ID);
-                    postCategoryDb.UpdatePostCategory(postCategoryVm);
-                    _postCategoryService.Update(postCategoryDb);
+                    var dbPostCategory = _postCategoryService.GetById(postCategoryVm.ID);
+                    dbPostCategory.UpdatePostCategory(postCategoryVm);
+                    dbPostCategory.UpdatedDate = DateTime.Now;
+                    _postCategoryService.Update(dbPostCategory);
                     _postCategoryService.Save();
-                    response = request.CreateResponse(HttpStatusCode.OK);
+                    var responseData = Mapper.Map<PostCategory, PostCategoryViewModel>(dbPostCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });

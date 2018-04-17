@@ -12,7 +12,7 @@
             templateUrl: "/app/components/post_categories/postCategoryAddView.html",
             controller: "postCategoryAddController"
         }).state('edit_post_category', {
-            url: "/edit_post_category",
+            url: "/edit_post_category/:id",
             templateUrl: "/app/components/post_categories/postCategoryEditView.html",
             controller: "postCategoryEditController"
         });

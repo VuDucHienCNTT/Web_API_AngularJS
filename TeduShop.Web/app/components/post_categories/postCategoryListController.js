@@ -20,7 +20,7 @@
                         id: id
                     }
                 }
-                apiService.del('/api/postcategory/delete', config, function (result) {
+                apiService.del('api/postcategory/delete', config, function (result) {
                     notificationService.displaySuccess('Xóa thành công!');
                     $scope.getPostCategories();
                 }, function () {
@@ -42,7 +42,7 @@
                     pageSize: 3
                 }
             }
-            apiService.get('/api/postcategory/getall', config, function (result) {
+            apiService.get('api/postcategory/getall', config, function (result) {
                 if (result.data.TotalCount == 0) {
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy!');
                 }

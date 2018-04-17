@@ -18,8 +18,8 @@
         function loadProductCategoryDetail() {
             apiService.get('api/productcategory/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.productCategory = result.data;
-            }, function (error) {
-                notificationService.displayError(error.data);
+            }, function () {
+                notificationService.displayError('Cannot get category detail!');
             });
         }
 
@@ -27,7 +27,7 @@
             apiService.put('api/productcategory/update', $scope.productCategory, function (result) {
                 notificationService.displaySuccess(result.data.Name + ' đã được cập nhật!');
                 $state.go('product_categories');
-            }, function (error) {
+            }, function () {
                 notificationService.displayError('Cập nhật không thành công!');
             });
         }
@@ -36,7 +36,7 @@
             apiService.get('api/productcategory/getallparents', null, function (result) {
                 $scope.parentCategories = result.data;
             }, function () {
-                console.log('Cannot get list parent!');
+                notificationService.displayError('Cannot get list parent!');
             });
         }
         loadParentCategory();

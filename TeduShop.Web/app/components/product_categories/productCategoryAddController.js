@@ -28,10 +28,9 @@
         function loadParentCategory() {
             apiService.get('api/productcategory/getallparents', null, function (result) {
                 $scope.parentCategories = result.data;
-            },
-                function () {
-                    console.log('Cannot get list parent!');
-                });
+            }, function (error) {
+                notificationService.displayError('Cannot get list parent!');
+            });
         }
         loadParentCategory();
     }
