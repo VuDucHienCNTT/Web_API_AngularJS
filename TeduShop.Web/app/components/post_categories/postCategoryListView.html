@@ -26,7 +26,8 @@
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-                    <button class="btn btn-success pull-right" type="button" ui-sref="add_post_category">Thêm mới</button>
+                    <button class="btn btn-success" ui-sref="add_post_category">Thêm mới</button>
+                    <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete">Xóa</button>
                 </div><!-- /.col-lg-6 -->
             </div>
             <br />
@@ -37,6 +38,7 @@
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tr>
+                                <th><input type="checkbox" name="all" ng-click="selectAll()" /></th>
                                 <th style="width: 5%">Id</th>
                                 <th style="width: 55%">Tên danh mục</th>
                                 <th style="width: 20%">Ngày tạo</th>
@@ -44,6 +46,7 @@
                                 <th style="width: 10%">Thao tác</th>
                             </tr>
                             <tr ng-repeat="item in postCategories">
+                                <td><input type="checkbox" name="all" ng-model="item.checked" /></td>
                                 <td>{{item.ID}}</td>
                                 <td>{{item.Name}}</td>
                                 <td>{{item.CreatedDate | date :'dd/MM/yyyy hh:mm:ss a'}}</td>
