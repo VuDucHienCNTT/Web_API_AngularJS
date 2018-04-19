@@ -87,7 +87,7 @@ namespace TeduShop.Web.Api
                 HttpResponseMessage response = null;
                 if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
@@ -113,7 +113,7 @@ namespace TeduShop.Web.Api
                 HttpResponseMessage response = null;
                 if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
@@ -139,7 +139,7 @@ namespace TeduShop.Web.Api
                 HttpResponseMessage response = null;
                 if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
@@ -161,7 +161,7 @@ namespace TeduShop.Web.Api
                  HttpResponseMessage response = null;
                  if (!ModelState.IsValid)
                  {
-                     request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                     response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                  }
                  else
                  {

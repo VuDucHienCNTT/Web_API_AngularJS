@@ -8,7 +8,7 @@ namespace TeduShop.Service
 {
     public interface IProductService
     {
-        void Add(Product product);
+        Product Add(Product product);
 
         void Update(Product product);
 
@@ -16,7 +16,11 @@ namespace TeduShop.Service
 
         IEnumerable<Product> GetAll();
 
-        IEnumerable<Product> GetAll(string keywork);
+        IEnumerable<Product> GetAll(string keyword);
+
+        Product GetById(int id);
+
+        void Save();
     }
 
     public class ProductService : IProductService
@@ -30,9 +34,9 @@ namespace TeduShop.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(Product product)
+        public Product Add(Product product)
         {
-            _productRepository.Add(product);
+            return _productRepository.Add(product);
         }
 
         public void Delete(int id)
@@ -40,14 +44,32 @@ namespace TeduShop.Service
             _productRepository.Delete(id);
         }
 
-        public IEnumerable<Product> GetAll(string keywork)
+        public IEnumerable<Product> GetAll(string keyword)
         {
-            throw new NotImplementedException();
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _productRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            }
+            else
+            {
+                return _productRepository.GetAll();
+            }
         }
 
         public IEnumerable<Product> GetAll()
         {
             return _productRepository.GetAll();
+        }
+
+        public Product GetById(int id)
+        {
+            return _productRepository.GetSingleById(id);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
         }
 
         public void Update(Product product)
