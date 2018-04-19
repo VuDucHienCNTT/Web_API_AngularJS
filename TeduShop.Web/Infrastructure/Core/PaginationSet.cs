@@ -6,7 +6,6 @@ namespace TeduShop.Web.Infrastructure.Core
     public class PaginationSet<T>
     {
         public int Page { set; get; }
-
         public int Count
         {
             get
@@ -14,7 +13,6 @@ namespace TeduShop.Web.Infrastructure.Core
                 return (Items != null) ? Items.Count() : 0;
             }
         }
-
         public int TotalPages { set; get; }// tong so trang
         public int TotalCount { set; get; }// tong so ban ghi
         public IEnumerable<T> Items { set; get; }
