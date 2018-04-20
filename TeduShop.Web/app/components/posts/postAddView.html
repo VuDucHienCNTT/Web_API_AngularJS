@@ -1,10 +1,137 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<section class="content-header">
+    <h1>
+        Thêm mới bài đăng
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li ui-sref="posts">Bài đăng</li>
+        <li class="active">Thêm mới</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="box">
+        <!-- Default box -->
+        <div class="box-header with-border">
+            <h3 class="box-title">Bài đăng : {{post.Name}}</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate role="form" name="frmAddPost" ng-submit="Addpost()">
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Tiêu đề</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" required ng-maxlength="256" ng-change="GetSeoTitle()" name="name" ng-model="post.Name">
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.name.$invalid || frmAddPost.name.$error.maxlength " title="Phải nhập tiêu đề bài đăng.&#013;Tiêu đề bài đăng chỉ được 256 ký tự." class="has-error">(*)</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Tiêu đề SEO</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="alias" required ng-model="post.Alias">
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.alias.$invalid" title="Phải nhập tiêu đề SEO." class="has-error">(*)</span>
+                        </div>
+                    </div>
+                </div>
 
-</body>
-</html>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Danh mục</label>
+                        <div class="col-sm-8">
+                            <select name="categoryID" class="form-control" required ng-model="post.CategoryID" ng-options="option.ID as option.Name for option in postCategories">
+                                <option value="">Chọn danh mục</option>
+                            </select>
+                            <input type="hidden" class="form-control" name="categoryID" ng-model="post.CategoryID" />
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.categoryID.$invalid" title="Phải chọn danh mục." class="has-error">(*)</span>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Hình ảnh</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" readonly name="image" ng-maxlength="256" ng-model="post.Image">
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-default" type="button" ng-click="ChooseImage()">Chọn</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.image.$error.maxlength " title="Hình ảnh chỉ được 256 ký tự." class="has-error">(*)</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Meta Keyword</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" ng-maxlength="256" name="metaKeyword" ng-model="post.MetaKeyword">
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.metaKeyword.$error.maxlength " title="Meta keyword chỉ được 256 ký tự." class="has-error">(*)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Mô tả ngắn</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" name="description" ng-maxlength="500" ng-model="post.Description" style="resize: vertical;"></textarea>
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.description.$error.maxlength " title="Mô tả chỉ được 500 ký tự." class="has-error">(*)</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label">Meta Description</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" name="metaDescription" ng-maxlength="256" ng-model="post.MetaDescription" style="resize: vertical;"></textarea>
+                        </div>
+                        <div class="col-sm-1">
+                            <span ng-show="frmAddPost.metaDescription.$error.maxlength " title="Meta description chỉ được 256 ký tự." class="has-error">(*)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="col-sm-2 control-label">Mô tả</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="content" ckeditor="ckeditorOptions" ng-model="post.Content" style="resize: vertical;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input type="checkbox" name="status" ng-model="post.Status" ng-checked="post.Status"> Kích hoạt
+                            <br />
+                            <br />
+                            <input type="checkbox" name="hotFlag" ng-model="post.HotFlag" ng-checked="post.HotFlag"> Bài đăng Hot
+                            <br />
+                            <br />
+                            <input type="checkbox" name="homeFlag" ng-model="post.HomeFlag" ng-checked="post.HomeFlag"> Hiển thị trang chủ
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button ui-sref="post" class="btn btn-default">Hủy</button>
+                <button class="btn btn-info pull-right" ng-disabled="frmAddPost.$invalid">Thêm mới</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+        <!-- /.box -->
+    </div>
+</section>
+<!-- /.content -->

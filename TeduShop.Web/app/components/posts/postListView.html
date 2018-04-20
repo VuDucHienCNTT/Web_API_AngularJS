@@ -1,10 +1,80 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<section class="content-header">
+    <h1>
+        Bài đăng
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Bài đăng</a></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bài đăng</h3>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="keyword" placeholder="Nhập từ khóa...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" ng-click="search()">Tìm kiếm</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <button class="btn btn-success" ui-sref="add_post">Thêm mới</button>
+                    <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete">Xóa</button>
+                </div><!-- /.col-lg-6 -->
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <!--<div class="box">-->
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th><input type="checkbox" name="all" ng-click="selectAll()" /></th>
+                                <th style="width: 5%">Id</th>
+                                <th style="width: 55%">Tên bài đăng</th>
+                                <th style="width: 20%">Ngày tạo</th>
+                                <th style="width: 10%">Trạng thái</th>
+                                <th style="width: 10%">Thao tác</th>
+                            </tr>
+                            <tr ng-repeat="item in posts">
+                                <td><input type="checkbox" name="all" ng-model="item.checked" /></td>
+                                <td>{{item.ID}}</td>
+                                <td>{{item.Name}}</td>
+                                <td>{{item.CreatedDate | date :'dd/MM/yyyy hh:mm:ss a'}}</td>
+                                <td>
+                                    <span ng-class="{'badge bg-red':item.Status==false,'badge bg-green':item.Status==true}">
+                                        {{item.Status | statusFilter}}
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" ui-sref="edit_post({id:item.ID})"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-sm btn-danger" ng-click="deletePost(item.ID)"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <span class="pull-right"> Trang: <b> {{page+1}} </b> - Tổng số có <b> {{totalCount}} </b> bản ghi </span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getPosts(page)"></pager-directive>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->
