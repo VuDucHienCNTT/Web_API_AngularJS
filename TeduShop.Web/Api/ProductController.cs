@@ -120,12 +120,12 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    var newProduct = new Product();
-                    newProduct.UpdateProduct(productVm);
-                    newProduct.CreatedDate = DateTime.Now;
-                    _productService.Update(newProduct);
+                    var dbProduct = new Product();
+                    dbProduct.UpdateProduct(productVm);
+                    dbProduct.CreatedDate = DateTime.Now;
+                    _productService.Update(dbProduct);
                     _productService.Save();
-                    var responseData = Mapper.Map<Product, ProductViewModel>(newProduct);
+                    var responseData = Mapper.Map<Product, ProductViewModel>(dbProduct);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
