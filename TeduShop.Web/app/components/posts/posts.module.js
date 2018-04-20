@@ -13,7 +13,7 @@
             templateUrl: "/app/components/posts/postAddView.html",
             controller: "postAddController"
         }).state('edit_post', {
-            url: "/edit_post",
+            url: "/edit_post/:id",
             templateUrl: "/app/components/posts/postEditView.html",
             controller: "postEditController"
         })

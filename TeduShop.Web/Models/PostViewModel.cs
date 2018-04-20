@@ -37,6 +37,8 @@ namespace TeduShop.Web.Models
 
         public string MetaDescription { set; get; }
 
+        public string Tags { set; get; }
+
         public bool Status { set; get; }
 
         public virtual PostCategoryViewModel PostCategory { set; get; }

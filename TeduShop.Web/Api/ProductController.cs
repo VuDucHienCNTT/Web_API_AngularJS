@@ -24,20 +24,6 @@ namespace TeduShop.Web.Api
             this._productService = productService;
         }
 
-        //[Route("getallparents")]
-        //[HttpGet]
-        //public HttpResponseMessage GetAll(HttpRequestMessage request)
-        //{
-        //    return CreateHttpResponse(request, () =>
-        //    {
-        //        var model = _productService.GetAll();
-
-        //        var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(model);
-
-        //        var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-        //        return response;
-        //    });
-        //}
 
         [Route("getbyid/{id:int}")]
         [HttpGet]

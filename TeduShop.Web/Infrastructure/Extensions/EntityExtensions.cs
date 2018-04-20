@@ -56,6 +56,8 @@ namespace TeduShop.Web.Infrastructure.Extensions
             post.Image = postVm.Image;
             post.HomeFlag = postVm.HomeFlag;
             post.ViewCount = postVm.ViewCount;
+            post.HotFlag = postVm.HotFlag;
+            post.Tags = postVm.Tags;
 
             post.CreatedDate = postVm.CreatedDate;
             post.CreatedBy = postVm.CreatedBy;
@@ -90,7 +92,7 @@ namespace TeduShop.Web.Infrastructure.Extensions
             product.MetaKeyword = productVm.MetaKeyword;
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
-            //product.Tags = productVm.Tags;
+            product.Tags = productVm.Tags;
             //product.Quantity = productVm.Quantity;
             //product.OriginalPrice = productVm.OriginalPrice;
         }

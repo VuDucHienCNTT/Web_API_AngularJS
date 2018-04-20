@@ -84,6 +84,14 @@
     <Compile Include="Migrations\201804161530084_UdRq_MaxLength.Designer.cs">
       <DependentUpon>201804161530084_UdRq_MaxLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804201518219_AddTagField.cs" />
+    <Compile Include="Migrations\201804201518219_AddTagField.Designer.cs">
+      <DependentUpon>201804201518219_AddTagField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804201611537_AddTagField1.cs" />
+    <Compile Include="Migrations\201804201611537_AddTagField1.Designer.cs">
+      <DependentUpon>201804201611537_AddTagField1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -138,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804161530084_UdRq_MaxLength.resx">
       <DependentUpon>201804161530084_UdRq_MaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804201518219_AddTagField.resx">
+      <DependentUpon>201804201518219_AddTagField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804201611537_AddTagField1.resx">
+      <DependentUpon>201804201611537_AddTagField1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
