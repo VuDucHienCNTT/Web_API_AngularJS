@@ -9,7 +9,7 @@ using static TeduShop.Web.App_Start.IdentityConfig;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/account")]
-    [Authorize]
+    //[Authorize]
     public class AccountController : ApiController
     {
         private ApplicationSignInManager _signInManager;

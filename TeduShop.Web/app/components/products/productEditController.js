@@ -11,17 +11,7 @@
 
         $scope.UpdateProduct = UpdateProduct;
         $scope.GetSeoTitle = GetSeoTitle;
-        $scope.moreImages = [];
 
-        $scope.ChooseMoreImage = function () {
-            var finder = new CKFinder();
-            finder.selectActionFunction = function (fileUrl) {
-                $scope.$apply(function () {
-                    $scope.moreImages.push(fileUrl);
-                })
-            }
-            finder.popup();
-        }
 
         //ckeditor
         $scope.ckeditorOptions = {
@@ -66,6 +56,17 @@
             finder.selectActionFunction = function (fileUrl) {
                 $scope.$apply(function () {
                     $scope.product.Image = fileUrl;
+                })
+            }
+            finder.popup();
+        }
+        $scope.moreImages = [];
+
+        $scope.ChooseMoreImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.moreImages.push(fileUrl);
                 })
             }
             finder.popup();
