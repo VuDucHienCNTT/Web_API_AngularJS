@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../assets/admin/lib/angular/angular.js" />
+﻿/// <reference path="../../../assets/admin/libs/angular/angular.js" />
 
 (function (app) {
     app.factory('commonService', commonService)

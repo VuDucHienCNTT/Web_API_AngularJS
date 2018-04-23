@@ -9,6 +9,7 @@ using static TeduShop.Web.App_Start.IdentityConfig;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/account")]
+    [Authorize]
     public class AccountController : ApiController
     {
         private ApplicationSignInManager _signInManager;
@@ -49,7 +50,7 @@ namespace TeduShop.Web.Api
         }
 
         [HttpPost]
-        [AllowAnonymous]
+
         [Route("login")]
         public async Task<HttpResponseMessage> Login(HttpRequestMessage request, string userName, string password, bool rememberMe)
         {
@@ -64,7 +65,6 @@ namespace TeduShop.Web.Api
         }
 
         [HttpPost]
-        [Authorize]
         [Route("logout")]
         public HttpResponseMessage Logout(HttpRequestMessage request)
         {

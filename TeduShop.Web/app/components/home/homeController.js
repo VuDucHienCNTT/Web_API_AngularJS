@@ -3,4 +3,4 @@
     function homeController() {
 
     }
-}(angular.module('tedushop')));
+})(angular.module('tedushop'));

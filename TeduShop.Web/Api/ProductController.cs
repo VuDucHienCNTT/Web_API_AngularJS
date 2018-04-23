@@ -15,6 +15,7 @@ using TeduShop.Web.Models;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/product")]
+    [Authorize]
     public class ProductController : ApiControllerBase
     {
         private IProductService _productService;
@@ -67,7 +68,7 @@ namespace TeduShop.Web.Api
 
         [Route("create")]
         [HttpPost]
-        [AllowAnonymous]
+        
         public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel productVm)
         {
             return CreateHttpResponse(request, () =>
@@ -94,7 +95,7 @@ namespace TeduShop.Web.Api
 
         [Route("update")]
         [HttpPut]
-        [AllowAnonymous]
+        
         public HttpResponseMessage Update(HttpRequestMessage request, ProductViewModel productVm)
         {
             return CreateHttpResponse(request, () =>
@@ -121,7 +122,7 @@ namespace TeduShop.Web.Api
 
         [Route("delete")]
         [HttpDelete]
-        [AllowAnonymous]
+        
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return CreateHttpResponse(request, () =>
@@ -143,7 +144,7 @@ namespace TeduShop.Web.Api
 
         [Route("deletemulti")]
         [HttpDelete]
-        [AllowAnonymous]
+        
         public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedProducts)
         {
             return CreateHttpResponse(request, () =>

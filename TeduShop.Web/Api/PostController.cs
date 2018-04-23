@@ -15,6 +15,7 @@ using TeduShop.Web.Models;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/post")]
+    [Authorize]
     public class PostController : ApiControllerBase
     {
         private IPostService _postService;
@@ -26,7 +27,7 @@ namespace TeduShop.Web.Api
 
         [Route("getall")]
         [HttpGet]
-        [AllowAnonymous]
+        
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize)
         {
             return CreateHttpResponse(request, () =>
@@ -79,7 +80,7 @@ namespace TeduShop.Web.Api
 
         [Route("create")]
         [HttpPost]
-        [AllowAnonymous]
+        
         public HttpResponseMessage Create(HttpRequestMessage request, PostViewModel postVm)
         {
             return CreateHttpResponse(request, () =>
@@ -105,7 +106,7 @@ namespace TeduShop.Web.Api
 
         [Route("update")]
         [HttpPut]
-        [AllowAnonymous]
+        
         public HttpResponseMessage Update(HttpRequestMessage request, PostViewModel postVm)
         {
             return CreateHttpResponse(request, () =>
@@ -131,7 +132,7 @@ namespace TeduShop.Web.Api
 
         [Route("delete")]
         [HttpDelete]
-        [AllowAnonymous]
+        
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return CreateHttpResponse(request, () =>
@@ -153,7 +154,7 @@ namespace TeduShop.Web.Api
 
         [Route("deletemulti")]
         [HttpDelete]
-        [AllowAnonymous]
+        
         public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedPosts)
         {
             return CreateHttpResponse(request, () =>
